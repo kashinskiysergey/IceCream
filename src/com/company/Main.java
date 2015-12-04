@@ -1,8 +1,8 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
+
+import java.util.*;
 import java.util.function.Predicate;
 
 public class Main {
@@ -69,10 +69,86 @@ public class Main {
         System.out.println(Ivan.toString());
         System.out.println("");
 
+        //        ______________________________________________________________________________________________________________
+
+
+
+        Collection listIce = new ArrayList();                       //Create the collection
+        listIce.add(plombir);
+        listIce.add(plombir1);
+        listIce.add(plombir2);
+        listIce.add(plombir3);
+        listIce.add(plombir3);
+        listIce.add(plombir1);
+        listIce.add(plombir3);
+        listIce.add(plombir);
+        listIce.add(plombir2);
+        listIce.add(plombir2);
+        listIce.add(plombir2);
+        listIce.add(plombir1);
+        listIce.add(plombir);
+        listIce.add(plombir3);
+
+        for (Iterator i = listIce.iterator(); i.hasNext();) {               //Cycle to find all "plombir"
+            if (i.next().equals(plombir))
+                System.out.println("Find 'Plombir' in collection.");
+            }
+
+//______________________________________________________________________________________________________________________
+
+        System.out.println(listIce.stream().filter(plombir2::equals).count());      //Get all "plombir2" by stream.
+        System.out.println(" ");
+        System.out.println("In collection-listIce 'stream' find " + listIce.stream().filter(plombir2::equals).count() + " plombir2!");
+        System.out.println(" ");
+
+//        ______________________________________________________________________________________________________________
+
+
+        Map mapIce = new HashMap<>();
+        mapIce.put(1,  plombir1);
+        mapIce.put(2,  plombir1);
+        mapIce.put(3,  plombir2);
+        mapIce.put(4,  plombir2);
+        mapIce.put(5,  plombir3);
+        mapIce.put(6,  plombir3);
+        mapIce.put(7,  plombir1);
+        mapIce.put(8,  plombir2);
+        mapIce.put(9,  plombir3);
+        mapIce.put(10, plombir1);
+        mapIce.put(11, plombir1);
+        mapIce.put(12, plombir2);
+        mapIce.put(13, plombir3);
+        mapIce.put(14, plombir3);
+        mapIce.put(15, plombir2);
+        mapIce.put(16, plombir1);
+        mapIce.put(17, plombir1);
+        mapIce.put(18, plombir);
+        mapIce.put(19, plombir2);
+        mapIce.put(20, plombir);
+        mapIce.put(21, plombir);
+        mapIce.put(22, plombir2);
+        mapIce.put(23, plombir1);
+        mapIce.put(24, plombir3);
+        System.out.println(mapIce.values());
+        System.out.println(" ");
+        System.out.println(mapIce.entrySet());
+        System.out.println(" ");
+        System.out.println(mapIce.keySet());
+        System.out.println(" ");
+
+        int i = 0;
+        for (Object value : mapIce.values()) {              //Проходим по карте
+            if (value.equals(Julya.IceCream)) {             //Ищем совподения с заданным значением
+                i++;
+                System.out.println("We found " + i + " icecream!");
+            }
+        }
+    }
+
 
 
 
 
     }
 
-}
+

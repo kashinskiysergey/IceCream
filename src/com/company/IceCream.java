@@ -7,7 +7,7 @@ public class IceCream {
     public IceCream( /**String color*/) {
         this.weight = getWeight();
         this.size = getSize();
-//        this.color = color;
+        this.color = color;
     }
 
     @Override
@@ -15,7 +15,7 @@ public class IceCream {
         return "IceCream{" +
                 "weight=" + weight +
                 ", size=" + size +
-//                ", color='" + color + '\'' +
+                ", color='" + color + '\'' +
                 ", taste='" + taste + '\'' +
                 '}';
     }
@@ -43,7 +43,12 @@ public class IceCream {
     final double weight;
     double size;
     String taste;
-//    final String color;
+
+    public String getColor() {
+        return color;
+    }
+
+    String color;
 
 
     public static enum Taste {
